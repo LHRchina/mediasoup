@@ -39,5 +39,4 @@
 /.vscode/
 .idea
 /venv
-server/node_modules
-
+/server/node_modules/
