@@ -18,6 +18,8 @@ DOCKER ?= docker
 	default clean clean-all xcode lint format test bear tidy \
 	fuzzer fuzzer-run-all docker-build docker-run
 
+all: default
+
 default:
 ifeq ($(MEDIASOUP_WORKER_BIN),)
 	$(PYTHON) ./scripts/configure.py -R mediasoup-worker

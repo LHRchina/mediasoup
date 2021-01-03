@@ -23,8 +23,14 @@
 #include <csignal>  // sigaction()
 #include <cstdlib>  // std::_Exit(), std::genenv()
 #include <iostream> // std::cerr, std::endl
+#include <libc.h>
 #include <map>
+#include <stdio.h>
 #include <string>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#define NAME "/tmp/mediasoup-demo-debug.sock"
 
 static constexpr int ConsumerChannelFd{ 3 };
 static constexpr int ProducerChannelFd{ 4 };
@@ -35,6 +41,18 @@ void IgnoreSignals();
 
 int main(int argc, char* argv[])
 {
+//	int signalSocketpair[2], payloadSocketpair[2];
+//	if (socketpair(AF_UNIX, SOCK_STREAM, 0, signalSocketpair))
+//	{
+//		perror("fail:");
+//		return -1;
+//	}
+//  if (socketpair(AF_UNIX, SOCK_STREAM, 0, payloadSocketpair))
+//  {
+//    perror("fail:");
+//    return -1;
+//  }
+
 	// Ensure we are called by our Node library.
 	if (!std::getenv("MEDIASOUP_VERSION"))
 	{

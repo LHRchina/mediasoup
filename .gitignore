@@ -37,3 +37,7 @@
 
 # Vistual Studio Code stuff.
 /.vscode/
+.idea
+/venv
+server/node_modules
+
